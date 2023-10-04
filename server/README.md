@@ -10,6 +10,13 @@
 7. Run seeder using `npx sequelize-cli db:seed:all`
 8. Start server using `pnpm dev`
 
+## Account Demo
+
+> after seeding you can use this user
+
+- email: demouser@gmail.com
+- pass: test123
+
 ## Endpoints
 
 List of available endpoints:
