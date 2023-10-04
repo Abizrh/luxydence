@@ -1,0 +1,7 @@
+<script setup lang="ts">
+import PageView from '../components/feat-auth/ViewForgotPassword.vue'
+</script>
+
+<template>
+  <page-view />
+</template>

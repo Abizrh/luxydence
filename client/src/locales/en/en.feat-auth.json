@@ -1,0 +1,89 @@
+{
+  "auth_globals": {
+    "forgot": "Forgot password?",
+    "signin": "Log in",
+    "signup": "Sign Up",
+    "not_have_account": "Don’t have an account?",
+    "have_account": "Already have an account?",
+    "back_to": "back to"
+  },
+  "change_password": {
+    "fields": {
+      "password": "Password",
+      "confirm_password": "Confirm password"
+    },
+    "contents": {
+      "title": "Change Password",
+      "button_title": "Reset password"
+    },
+    "errors": {
+      "password_empty": "Your password must be a string.",
+      "password_min_1": "Please enter your password.",
+      "password_min_8": "Your password must have 8 characters or more.",
+      "confirm_password_empty": "Your confirm password must be a string.",
+      "password_notsame_confirm": "Password is not the same as confirm password.",
+      "notify": "Oops, password and confirm password didn't match."
+    }
+  },
+  "forgot_password": {
+    "fields": {
+      "email": "Enter your email"
+    },
+    "contents": {
+      "title": "Forgot password?",
+      "title_description": "No worries, we’ll send you reset instructions.",
+      "button_title": "Submit"
+    },
+    "errors": {
+      "email_empty": "Your email must be a string.",
+      "email_bad": "Please enter your email address."
+    }
+  },
+  "signin": {
+    "fields": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "contents": {
+      "title": "Login",
+      "title_description": "Please enter your email and password to access your account.",
+      "button_title": "Login",
+      "success": "Success login"
+    },
+    "errors": {
+      "email_empty": "Your email must be a string.",
+      "email_bad": "Please enter your email address.",
+      "phone_empty": "Please enter your phone number",
+      "password_empty": "Your password must be a string.",
+      "password_min_1": "Please enter your password.",
+      "notify": "Oops, email and password didn't match."
+    }
+  },
+  "signup": {
+    "fields": {
+      "company": "Company",
+      "email": "Email",
+      "phone_number": "Phone Number",
+      "password": "Password",
+      "confirm_password": "Confirm password"
+    },
+    "contents": {
+      "title": "Registration",
+      "title_description": "Sign up today and start building your custom messaging solution with Luxydence",
+      "button_title": "Register"
+    },
+    "errors": {
+      "company_empty": "Your company must be a string.",
+      "company_min_3": "Company must have 3 characters or more",
+      "email_empty": "Your email must be a string.",
+      "email_bad": "Please enter your email address.",
+      "phone_empty": "Please enter your phone number.",
+      "phone_is_number": "Phone must be a number.",
+      "password_empty": "Your password must be a string.",
+      "password_min_1": "Please enter your password.",
+      "password_min_8": "Your password must have 8 characters or more.",
+      "confirm_password_empty": "Your confirm password must be a string.",
+      "notify": "Oops, error at register."
+    }
+  }
+}

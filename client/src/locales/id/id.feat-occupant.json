@@ -1,0 +1,19 @@
+{
+  "occupants": {
+    "fields": {
+      "user_name": "Your name",
+      "email": "Email",
+      "company": "Company / Organization",
+      "phone": "Phone",
+      "new_password": "New password",
+      "confirm_password": "Confirm password",
+      "current_password": "Current password"
+    },
+    "contents": {
+      "title_edit": "Edit Profile",
+      "title_change": "Change Password",
+      "button_title": "Save",
+      "main_title": "Menyederhanakan manajemen penghuni, menghemat waktu, dan meningkatkan efisiensi komunikasi, menjadikannya alat penting bagi individu dan bisnis."
+    }
+  }
+}

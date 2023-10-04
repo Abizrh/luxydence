@@ -1,0 +1,71 @@
+.q-dialog__inner--fullheight {
+  padding: 0;
+}
+
+.half-rounded {
+  border-radius: 15px 0 0 15px !important;
+}
+
+.scrollbar-thin {
+  -ms-overflow-style: thin !important; /* Internet Explorer 10+ */
+  scrollbar-width: thin !important; /* Firefox */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  background-color: #ccc;
+  width: 4px;
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: #c4c4c4;
+  border-radius: 20px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:horizontal {
+  background-color: #ccc;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  background: transparent;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+input[type='color'] {
+  vertical-align: baseline;
+}
+
+input[type='color']::-moz-color-swatch {
+  border: none;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0px 1000px white inset !important;
+}

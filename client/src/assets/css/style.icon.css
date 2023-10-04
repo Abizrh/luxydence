@@ -1,0 +1,9 @@
+.black-filter {
+  filter: brightness(0) saturate(100%);
+}
+
+.primary-filter {
+  filter: invert(70%) sepia(52%) saturate(5869%) hue-rotate(190deg) brightness(105%) contrast(103%);
+
+}
+

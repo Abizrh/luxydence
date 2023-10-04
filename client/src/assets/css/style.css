@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
+@import './style.icon.css';
+@import './style.switch.css';
+@import './style.system.css';
+
+/* Declare Font Family */
+.font-family-sora {
+  font-family: 'Sora', sans-serif;
+}
+
+/* Default HTML */
+html,
+body {
+  font-family: 'Sora', sans-serif;
+  /* color: #414141; */
+  color: #000000;
+}

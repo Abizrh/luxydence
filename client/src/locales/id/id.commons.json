@@ -1,0 +1,9 @@
+{
+  "validations": {
+    "required": "{{ field }} wajib diisi",
+    "string": "{{ field }} harus berupa text",
+    "email": "Bukan alamat email valid",
+    "min_length": "{{ field }} sedikitnya {{ min }} karakter",
+    "max_length": "{{ field }} tidak boleh lebih dari {{ max }} karakter"
+  }
+}

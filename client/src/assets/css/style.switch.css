@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.checkbox-rounded {
+  @apply tw-flex tw-h-[20px] tw-w-[20px] tw-items-center tw-justify-center tw-rounded-full tw-border;
+}
+
+.checkbox-rounded-medium {
+  @apply tw-flex tw-h-[24px] tw-w-[24px] tw-items-center tw-justify-center tw-rounded-full tw-border;
+}
+
+.checkbox-square {
+  @apply tw-flex tw-h-[20px] tw-w-[20px] tw-items-center tw-justify-center tw-rounded-[6px] tw-border;
+}
+
+.switch-body {
+  @apply tw-relative tw-inline-flex tw-h-[20px] tw-w-[36px] tw-shrink-0 tw-cursor-pointer tw-rounded-full tw-border-2 tw-border-transparent tw-transition-colors tw-duration-200 tw-ease-in-out focus:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-white focus-visible:tw-ring-opacity-75;
+}
+
+.switch-child {
+  @apply tw-pointer-events-none tw-inline-block tw-h-[17px] tw-w-[17px] tw-transform tw-rounded-full tw-bg-white tw-shadow-lg tw-ring-0 tw-transition tw-duration-200 tw-ease-in-out;
+}
+
+.switch-body-active {
+  @apply tw-bg-primary-500;
+}
+
+.switch-body-normal {
+  @apply tw-bg-neutral-300;
+}
+
+.switch-child-active {
+  @apply tw-translate-x-[15px];
+}
+
+.switch-child-normal {
+  @apply tw-translate-x-0;
+}

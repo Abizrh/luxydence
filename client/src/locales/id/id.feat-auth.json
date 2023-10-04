@@ -1,0 +1,89 @@
+{
+  "auth_globals": {
+    "forgot": "Lupa password?",
+    "signin": "Masuk",
+    "signup": "Daftar",
+    "not_have_account": "Tidak punya akun?",
+    "have_account": "Sudah punya akun?",
+    "back_to": "kembali ke"
+  },
+  "change_password": {
+    "fields": {
+      "password": "Password",
+      "confirm_password": "Konfirmasi password"
+    },
+    "contents": {
+      "title": "Ganti Password",
+      "button_title": "Reset password"
+    },
+    "errors": {
+      "password_empty": "Kata sandi Anda harus berupa string.",
+      "password_min_1": "Silakan masukkan kata sandi Anda.",
+      "password_min_8": "Kata sandi Anda harus terdiri dari 8 karakter atau lebih.",
+      "confirm_password_empty": "Konfirmasi Kata sandi harus berupa string.",
+      "password_notsame_confirm": "Kata sandi tidak sama dengan konfirmasi kata sandi.",
+      "notify": "Oops, kata sandi and konfirmasi tidak sesuai."
+    }
+  },
+  "forgot_password": {
+    "fields": {
+      "email": "Masukkan emailmu"
+    },
+    "contents": {
+      "title": "Lupa password?",
+      "title_description": "Jangan khawatir, kami akan mengirimkan instruksi ke kamu.",
+      "button_title": "Submit"
+    },
+    "errors": {
+      "email_empty": "Email Anda harus berupa string.",
+      "email_bad": "Silahkan masukkan alamat email."
+    }
+  },
+  "signin": {
+    "fields": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "contents": {
+      "title": "Login",
+      "title_description": "Silahkan masukan email dan password dari akunmu.",
+      "button_title": "Masuk",
+      "success": "Berhasil login"
+    },
+    "errors": {
+      "email_empty": "Email Anda harus berupa string.",
+      "email_bad": "Silahkan masukkan alamat email.",
+      "password_empty": "Kata sandi Anda harus berupa string.",
+      "password_min_1": "Silakan masukkan kata sandi Anda.",
+      "notify": "Oops, email and kata sandi tidak sesuai."
+    }
+  },
+  "signup": {
+    "fields": {
+      "company": "Perusahaan",
+      "email": "Email",
+      "phone_number": "Nomor telpon",
+      "password": "Password",
+      "confirm_password": "Konfirmasi password"
+    },
+    "contents": {
+      "title": "Pendaftaran",
+      "title_description": "Daftar hari ini dan mulailah membangun solusi chat khusus Anda dengan Luxydence",
+      "button_title": "Daftar"
+    },
+    "errors": {
+      "company_empty": "Nama perusahaan harus berupa string.",
+      "company_min_3": "Nama perusahaan harus terdiri dari 3 karakter atau lebih.",
+      "email_empty": "Email Anda harus berupa string.",
+      "email_bad": "Silahkan masukkan alamat email.",
+      "phone_empty": "Silahkan masukkan nomor telpon.",
+      "phone_is_number": "Telpon harus berisikan angka.",
+      "password_empty": "Kata sandi Anda harus berupa string.",
+      "password_min_1": "Silakan masukkan kata sandi Anda.",
+      "password_min_8": "Kata sandi Anda harus terdiri dari 8 karakter atau lebih.",
+      "confirm_password_empty": "Konfirmasi Kata sandi harus berupa string.",
+      "password_notsame_confirm": "Kata sandi tidak sama dengan konfirmasi kata sandi.",
+      "notify": "Oops, terjadi kesalahan di register."
+    }
+  }
+}

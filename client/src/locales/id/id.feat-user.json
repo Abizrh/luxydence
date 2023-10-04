@@ -1,0 +1,18 @@
+{
+  "user_edit": {
+    "fields": {
+      "user_name": "Nama anda",
+      "email": "Email",
+      "company": "Perusahaan / Organisasi",
+      "phone": "Telpon",
+      "new_password": "Password baru",
+      "confirm_password": "Konfirmasi password",
+      "current_password": "Password saat ini"
+    },
+    "contents": {
+      "title_edit": "Edit Profil",
+      "title_change": "Ubah Password",
+      "button_title": "Simpan"
+    }
+  }
+}

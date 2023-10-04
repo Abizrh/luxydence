@@ -1,0 +1,13 @@
+FROM node:16.17.0
+
+
+WORKDIR /app/server
+
+COPY server/package*.json ./
+
+RUN npm install -g pnpm
+RUN pnpm install
+
+COPY server/ ./
+
+CMD ["pnpm", "dev"]

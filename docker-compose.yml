@@ -1,0 +1,36 @@
+version: "3"
+services:
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile.client
+    ports:
+      - "5173:5173"
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile.server
+    ports:
+      - "8000:8000"
+    environment:
+      MYSQL_HOST: mysql-server
+      MYSQL_USER: user
+      MYSQL_PASSWORD: My_sql_1_password
+      MYSQL_DATABASE: beon-intermedia-test
+    depends_on:
+      - mysql-server
+
+  mysql-server:
+    image: mysql:latest
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+
+    ports:
+      - "3307:3306"
