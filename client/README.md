@@ -1,5 +1,3 @@
-# maxchat-frontend-v2
-
 ## Installation Steps
 
 - based on https://quasar.dev/start/vite-plugin
