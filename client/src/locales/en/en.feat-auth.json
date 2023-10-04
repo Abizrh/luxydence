@@ -61,9 +61,8 @@
   },
   "signup": {
     "fields": {
-      "company": "Company",
+      "name": "Name",
       "email": "Email",
-      "phone_number": "Phone Number",
       "password": "Password",
       "confirm_password": "Confirm password"
     },

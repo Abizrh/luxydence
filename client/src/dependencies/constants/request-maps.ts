@@ -12,6 +12,7 @@ type RequestMap = {
 
 const requestRaws: any[] = [
   { path: 'auth/login', method: 'post', description: 'Api for login' },
+  { path: 'auth/register', method: 'post', description: 'Api for register' },
   { path: 'auth/refresh', method: 'post', description: 'Api for refresh token' },
   { path: 'billing/first', method: 'get', description: 'Api for get billing information' },
   { path: 'dues', method: 'get,put', description: 'Api for get all dues' },

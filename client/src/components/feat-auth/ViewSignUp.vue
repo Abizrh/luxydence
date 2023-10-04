@@ -6,29 +6,27 @@ import { email, minLength, regex, string, safeParse, toTrimmed } from 'valibot'
 import { sleep } from '@/dependencies/helpers/util-of-timer'
 import { getTranslate, createNotify } from '@/dependencies/methods/_method'
 import ComponentForm from '@/components/basics/ComponentForm.vue'
+import { createRequest } from '@/dependencies/methods/_method'
 
 const $q = useQuasar()
 const router = useRouter()
 const title: any = ref(null)
 const titleChild: any = ref(null)
 const prefix = 'signup'
-const models: any = ref({ company: null, email: null, phone_number: null, password: null, confirm_password: null })
-const errors: any = ref({ company: null, email: null, phone_number: null, password: null, confirm_password: null })
+const models: any = ref({ name: null, email: null, password: null, confirm_password: null })
+const errors: any = ref({ name: null, email: null, password: null, confirm_password: null })
 const schemaRules: any = ref({})
+const loading = ref(false) 
 
 const initialized = async () => {
   await sleep(100)
   schemaRules.value = {
-    company: string(getTranslate(`${prefix}.errors.company_empty`), [toTrimmed(), minLength(3, getTranslate(`${prefix}.errors.company_min_3`))]),
+    name: string(getTranslate(`${prefix}.errors.name_empty`), [toTrimmed(), minLength(3, getTranslate(`${prefix}.errors.name_min_3`))]),
     email: string(getTranslate(`${prefix}.errors.email_empty`), [toTrimmed(), email(getTranslate(`${prefix}.errors.email_bad`))]),
-    phone_number: string(getTranslate(`${prefix}.errors.phone_empty`), [
-      toTrimmed(),
-      regex(/[0-9]{4,}/i, getTranslate(`${prefix}.errors.phone_is_number`)),
-    ]),
     password: string(getTranslate(`${prefix}.errors.password_empty`), [
       toTrimmed(),
       minLength(1, getTranslate(`${prefix}.errors.password_min_1`)),
-      minLength(8, getTranslate(`${prefix}.errors.password_min_8`)),
+      minLength(6, getTranslate(`${prefix}.errors.password_min_8`)),
     ]),
     confirm_password: string(getTranslate(`${prefix}.errors.confirm_password_empty`), [toTrimmed()]),
   }
@@ -51,6 +49,23 @@ const handleSubmit = async () => {
   }, 0)
   if (errorCount > 0) {
     createNotify($q, getTranslate(`${prefix}.errors.notify`), 'error')
+  } else {
+    loading.value = true
+    const payloads:any = {}
+    if (models.value?.name) payloads.name = models.value.name
+    if (models.value?.email) payloads.email = models.value.email
+    if (models.value?.password) payloads.password = models.value.password
+
+    const result = await createRequest('auth-register', 'post', payloads)
+    if (result.statusCode.value === 200 && result.data?.value) {
+      createNotify($q, getTranslate(`${prefix}.contents.success`), 'success')
+      await sleep(100)
+      router.push('/')
+    } else {
+      const errorMessage = getTranslate(`${prefix}.errors.notify`) || result?.response
+      createNotify($q, errorMessage, 'error')
+    }
+    loading.value = false
   }
 }
 
@@ -64,22 +79,16 @@ onMounted(async () => {
     <span class="tw-text-[33px] tw-font-semibold">{{ title }}</span>
     <span class="tw-text-body-2 tw-font-normal">{{ titleChild }}</span>
     <component-form
-      :bindings="{ title: getTranslate(`${prefix}.fields.company`) }"
-      :error="errors.company || ''"
+      :bindings="{ title: getTranslate(`${prefix}.fields.name`) }"
+      :error="errors.name || ''"
       type-input="text"
-      @input="(value) => (models.company = value)"
+      @input="(value) => (models.name = value)"
     />
     <component-form
       :bindings="{ title: getTranslate(`${prefix}.fields.email`) }"
       :error="errors.email || ''"
       type-input="text"
       @input="(value) => (models.email = value)"
-    />
-    <component-form
-      :bindings="{ title: getTranslate(`${prefix}.fields.phone_number`) }"
-      :error="errors.phone_number || ''"
-      type-input="text"
-      @input="(value) => (models.phone_number = value)"
     />
     <component-form
       :bindings="{ title: getTranslate(`${prefix}.fields.password`) }"

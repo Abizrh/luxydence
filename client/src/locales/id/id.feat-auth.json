@@ -60,9 +60,8 @@
   },
   "signup": {
     "fields": {
-      "company": "Perusahaan",
+      "name": "Nama",
       "email": "Email",
-      "phone_number": "Nomor telpon",
       "password": "Password",
       "confirm_password": "Konfirmasi password"
     },
