@@ -5,7 +5,6 @@ import { useSettingStore } from '@/stores/setting'
 import { doLogout } from '@/dependencies/methods/auth-method'
 import PartSidebar from '@/components/commons/PartSidebarList.vue'
 import ModalLogout from '@/components/commons/ModalLogout.vue'
-import SectionHeader from '@/components/feat-board/SectionHeader.vue'
 
 const router = useRouter()
 const settingStore = useSettingStore()
@@ -52,11 +51,6 @@ onMounted(() => {
 
 <template>
 	<q-layout view="lHh Lpr lff" container class="rounded-borders tw-relative tw-h-screen tw-rounded-none tw-bg-neutral-300">
-		<q-header v-if="false" class="tw-bg-neutral-300 tw-p-[10px]" style="z-index: 100">
-			<q-toolbar class="tw-h-[60px] tw-rounded-[8px] tw-bg-black tw-p-10">
-				<section-header />
-			</q-toolbar>
-		</q-header>
 		<q-drawer :mini="isMini" show-if-above :width="278" :breakpoint="400">
 			<div class="tw-flex tw-h-[60px] tw-w-full tw-bg-[#292929]" :class="isMini ? 'tw-p-2' : 'tw-p-4'">
 				<div v-if="!isMini" class="tw-relative tw-h-[40px] tw-flex-none">

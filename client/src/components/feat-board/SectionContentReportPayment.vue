@@ -33,9 +33,8 @@ const initialized = () => {
   models.value['calendar'] = getByDateStringSplit(today.toISOString()?.substring(0, 10), '-')
   models.value['category'] = 'Agent'
   summaries.value = [
-    { id: 1, text: 'Monthly Active User', value: '120', color: 'tw-bg-primary-400' },
-    { id: 2, text: 'New Customer', value: '14', color: 'tw-bg-success-300' },
-    { id: 3, text: 'Existing Customer', value: '57', color: 'tw-bg-info-500' },
+    { id: 2, text: 'New Occupant', value: '14', color: 'tw-bg-success-300' },
+    { id: 3, text: 'Existing Occupant', value: '57', color: 'tw-bg-info-500' },
   ]
 }
 
@@ -76,7 +75,7 @@ onMounted(() => {
       </div>
     </div>
     <div class="tw-my-4">
-      <div class="tw-mb-4 tw-text-[16px] tw-font-semibold">Monthly New & Existing Customer</div>
+      <div class="tw-mb-4 tw-text-[16px] tw-font-semibold">Monthly New & Existing Occupant</div>
       <q-card class="tw-p-2">
         <q-card-section><section-chart /></q-card-section>
       </q-card>

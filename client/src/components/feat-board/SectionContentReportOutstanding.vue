@@ -3,23 +3,15 @@ import { onMounted, ref } from 'vue'
 
 const models: any = ref({})
 const columnsFirst: any = ref([
-  { id: 'ticket_id', label: 'Ticket ID', field: 'ticket_id', name: 'ticket_id', sortable: false, align: 'center' },
-  { id: 'agent_name', label: 'Agent Name', field: 'agent_name', name: 'agent_name', sortable: false, align: 'center' },
-  { id: 'customer_name', label: 'Customer Name', field: 'customer_name', name: 'customer_name', sortable: false, align: 'center' },
-  { id: 'date', label: 'Date', field: 'date', name: 'date', sortable: false, align: 'center' },
+  { id: 'ticket_id', label: 'Pembayaran ID', field: 'ticket_id', name: 'ticket_id', sortable: false, align: 'center' },
+  { id: 'agent_name', label: 'Nomor Rumah', field: 'agent_name', name: 'agent_name', sortable: false, align: 'center' },
+  { id: 'customer_name', label: 'Pemilik Rumah', field: 'customer_name', name: 'customer_name', sortable: false, align: 'center' },
+  { id: 'date', label: 'Tanggal', field: 'date', name: 'date', sortable: false, align: 'center' },
   {
     id: 'first_message_time',
-    label: 'Customer First Message Time',
+    label: 'Total Tunggakan',
     field: 'first_message_time',
     name: 'first_message_time',
-    sortable: false,
-    align: 'center',
-  },
-  {
-    id: 'first_response_time',
-    label: 'Agent First Response Time',
-    field: 'first_response_time',
-    name: 'first_response_time',
     sortable: false,
     align: 'center',
   },
@@ -74,7 +66,7 @@ const initialized = () => {
   ]
   rowsFirst.value = dummies?.map((item: any) => {
     item.date = '22 Jun 2023'
-    item.first_message_time = '16:30:01'
+    item.first_message_time = 'Rp. 10000'
     item.first_response_time = '16:30:40'
     return item
   })
@@ -124,45 +116,15 @@ onMounted(() => {
         :key="i"
         class="tw-flex tw-h-[156px] tw-flex-col tw-items-center tw-justify-center tw-rounded-[12px] tw-bg-primary-400 tw-p-2"
       >
-        <span class="tw-text-[20px] tw-font-bold tw-text-primary-500">2 Minute 30 second</span>
+        <span class="tw-text-[20px] tw-font-bold primary-filter">2 Minute 30 second</span>
         <span class="tw-text-[14px] tw-font-normal">Average Response Time</span>
       </div>
     </div>
     <div class="tw-my-4">
-      <div class="tw-mb-8 tw-text-[14px] tw-font-semibold">First Response Time</div>
+      <div class="tw-mb-8 tw-text-[14px] tw-font-semibold">Tunggakan</div>
       <q-table
         :rows="rowsFirst"
         :columns="columnsFirst"
-        :pagination="{ rowsPerPage: 10 }"
-        row-key="id"
-        no-data-label="I didn't find anything for you"
-        no-results-label="The filter didn't uncover any results"
-        class="tw-mt-4"
-      >
-        <template #header="props">
-          <q-tr :props="props" class="tw-bg-[#F9FAFB]">
-            <q-th v-for="col in props.cols" :key="col.name" :props="props">
-              <span class="tw-font-semibold">{{ col.label }}</span>
-            </q-th>
-          </q-tr>
-        </template>
-        <template #body-cell="props">
-          <q-td :props="props">
-            <span class="tw-font-normal">{{ props.value }}</span>
-          </q-td>
-        </template>
-        <template #no-data="{ message }">
-          <div class="full-width row flex-center q-gutter-sm">
-            <span class="tw-whitespace-nowrap tw-capitalize">{{ message }}</span>
-          </div>
-        </template>
-      </q-table>
-    </div>
-    <div class="tw-my-4">
-      <div class="tw-mb-8 tw-text-[14px] tw-font-semibold">Average First Response Time</div>
-      <q-table
-        :rows="rowsSecond"
-        :columns="columnsSecond"
         :pagination="{ rowsPerPage: 10 }"
         row-key="id"
         no-data-label="I didn't find anything for you"

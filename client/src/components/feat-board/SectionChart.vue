@@ -1,51 +1,27 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted } from 'vue'
 import { sleep } from '@/dependencies/helpers/util-of-timer'
 
-const props = defineProps({
-  inboundRaws: { type: Array, default: () => [] },
-  outboundRaws: { type: Array, default: () => [] },
-})
+const textChart = 'Total new occupant & existing occupant this month'
 
-const textChart = 'Total Inbound/Outbound weekly'
-const isDummy = false
-const inboundLists: any = ref([])
-const outboundLists: any = ref([])
-const myChart: any = ref(null)
-
-watch(props, async (value) => {
-  if (!value) return
+onMounted(async () => {
   await sleep(100)
-  onInitChart()
-})
-
-const onInitChart = () => {
-  if (isDummy) {
-    inboundLists.value = [1.2, 0.9, 0.8, 0.9, 0.4]
-    outboundLists.value = [1.6, 1.9, 0.7, 1.3, 1]
-  } else {
-    inboundLists.value = props.inboundRaws
-    outboundLists.value = props.inboundRaws
-  }
   if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     const ctx: any = (document as any)?.getElementById('view-chart') || null
     const chartjs: any = (window as any)?.Chart || null
-    if (myChart.value) {
-      myChart.value?.destroy()
-    }
     if (!ctx) return
     const chartData = {
       labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
       datasets: [
         {
-          label: 'Inbound',
-          backgroundColor: '#FF4E00',
-          data: inboundLists.value,
+          label: 'New Customer',
+          backgroundColor: 'blue',
+          data: [1.2, 0.9, 0.8, 0.9, 0.4],
         },
         {
-          label: 'Outbound',
-          backgroundColor: '#FFB800',
-          data: outboundLists.value,
+          label: 'Existing Customer',
+          backgroundColor: 'blue',
+          data: [1.6, 1.9, 0.7, 1.3, 1],
         },
       ],
     }
@@ -53,30 +29,36 @@ const onInitChart = () => {
       barValueSpacing: 20,
       plugins: {
         legend: {
-          display: true,
-          position: 'right',
-          align: 'middle',
+          display: false,
           labels: { pointStyle: 'circle', pointStyleWidth: 18, usePointStyle: true, boxWidth: 6 },
         },
       },
       scales: {},
     }
-    myChart.value = new chartjs(ctx, {
+    new chartjs(ctx, {
       type: 'bar',
       data: chartData,
       options: chartOptions,
     })
   }
-}
-
-onMounted(async () => {
-  await sleep(100)
 })
 </script>
 
 <template>
-  <div class="tw-flex tw-flex-col tw-p-[20px]">
-    <span class="tw-text-[16px] tw-font-light tw-text-black">{{ textChart }}</span>
-    <canvas id="view-chart" height="450"></canvas>
+  <div class="tw-flex tw-flex-col tw-p-[10px]">
+    <div class="tw-mb-6 tw-mt-0 tw-flex tw-justify-between">
+      <span class="tw-text-[16px] tw-font-light tw-text-black">{{ textChart }}</span>
+      <div class="tw-flex tw-gap-3">
+        <div class="tw-flex tw-items-center tw-gap-1">
+          <div class="tw-h-[12px] tw-w-[12px] tw-rounded-full tw-bg-[#FF4E00]"></div>
+          <span class="tw-text-[12px] tw-font-normal">New Occupant</span>
+        </div>
+        <div class="tw-flex tw-items-center tw-gap-1">
+          <div class="tw-h-[12px] tw-w-[12px] tw-rounded-full tw-bg-[#FFE8DE]"></div>
+          <span class="tw-text-[12px] tw-font-normal">Existing Occupant</span>
+        </div>
+      </div>
+    </div>
+    <canvas id="view-chart" height="400"></canvas>
   </div>
 </template>
